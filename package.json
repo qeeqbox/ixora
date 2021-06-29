@@ -1,0 +1,22 @@
+{
+  "name": "ixora",
+  "version": "1.0.1",
+  "description": "",
+  "main": "qbixora.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "3.1.6",
+    "open": "8.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qeeqbox/ixora.git"
+  },
+  "author": "QeeqBox",
+  "bugs": {
+    "url": "https://github.com/qeeqbox/ixora/issues"
+  },
+  "homepage": "https://github.com/qeeqbox/ixora#readme"
+}
