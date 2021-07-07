@@ -22,7 +22,8 @@ class QBIxora:
         self.graph = {'nodes':[],'links':[],'search_input':[],'search_index':[]}
         self.temp_nodes = []
         self.temp_edges = []
-        self.base_html_file = open('graph_py.html',encoding='utf-8').read()
+        self.graph_py = path.join(path.dirname(__file__), "data", "graph_py.html")
+        self.base_html_file = open(self.graph_py,encoding='utf-8').read()
 
     def add_node(self,name,search=None,_set=None):
         if name not in self.temp_nodes:

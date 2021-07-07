@@ -24,7 +24,7 @@ class QBIxora {
     }
     this.temp_nodes = []
     this.temp_edges = []
-    this.base_html_file = fs.readFileSync(path.join(__dirname,'graph.html'), 'utf-8');
+    this.base_html_file = fs.readFileSync(path.join(__dirname,'graph_js.html'), 'utf-8');
     this.base_html = ejs.render ( this.base_html_file , {project_name:this.project_name});
   }
 
