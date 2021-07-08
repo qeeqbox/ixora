@@ -12,7 +12,7 @@ setup(
     author_email='gigaqeeq@gmail.com',
     description="Automate force-directed graph",
     long_description=long_description,
-    version='0.2',
+    version='0.4',
     license='AGPL-3.0',
     url='https://github.com/qeeqbox/ixora',
     packages=['ixora'],

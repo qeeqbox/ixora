@@ -77,8 +77,7 @@ class QBIxora {
         this.verbose && console.log(err);
       }
   }
-
-  create_graph(div,window_title="",search_title="",search_msg="", message="",message_link="",tools=[], collide=10,distance=100,data={},method="",save_to=undefined,open_file=false)
+  create_graph(div,window_title="",search_title="",search_msg="", copyright_link="",copyright_msg="",tools=[], collide=10,distance=100,data={},method="",save_to=undefined,open_file=false)
   {
 
     var current_subject = false;
@@ -95,8 +94,8 @@ class QBIxora {
     var tools_rendered = tools
     var collide_rendered = collide
     var distance_rendered = distance
-    var copyright_link_rendered = message_link
-    var copyright_msg_rendered = message
+    var copyright_link_rendered = copyright_link
+    var copyright_msg_rendered = copyright_msg
 
     try{
       if (Object.keys(data).length !== 0){
