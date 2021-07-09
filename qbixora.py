@@ -13,6 +13,7 @@
 
 from jinja2 import Template, Environment, FileSystemLoader
 from webbrowser import open as wopen
+from json import dumps
 from os import path
 
 class QBIxora:
@@ -22,8 +23,10 @@ class QBIxora:
         self.graph = {'nodes':[],'links':[],'search_input':[],'search_index':[]}
         self.temp_nodes = []
         self.temp_edges = []
-        self.graph_py = path.join(path.dirname(__file__), "data", "graph_py.html")
-        self.base_html_file = open(self.graph_py,encoding='utf-8').read()
+        self.graph_py = path.join(path.dirname(__file__), "data", "graph.html") #keep it
+        #self.base_html_file = open(self.graph_py,encoding='utf-8').read()
+        self.environment = Environment(loader=FileSystemLoader(path.dirname(self.graph_py)),trim_blocks=True,block_start_string='%%',block_end_string='%%',variable_start_string='<%=', variable_end_string='%>')
+        self.template = self.environment.get_template("graph.html")
 
     def add_node(self,name,search=None,_set=None):
         if name not in self.temp_nodes:
@@ -79,7 +82,7 @@ class QBIxora:
             return ixora_object
 
         if method == 'file_with_json':
-            rendered = Template(self.base_html_file).render(project_name=self.project_name,graph=ixora_object)
+            rendered = self.template.render(project_name=self.project_name,method=method,graph=dumps(ixora_object))
             with open(save_to, 'w', encoding='utf-8') as f:
                 f.write(rendered)
             if path.exists(save_to):

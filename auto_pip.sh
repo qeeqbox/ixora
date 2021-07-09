@@ -13,7 +13,7 @@ EOL
 cp setup.py pip-ixora/setup.py
 cp README.rst pip-ixora/README.rst
 mkdir -p pip-ixora/ixora/data
-cp -r graph_py.html pip-ixora/ixora/data/
+cp -r graph.html pip-ixora/ixora/data/
 cd pip-ixora/
 echo "[x] Checking setup.py"
 python3 setup.py check -r -s
