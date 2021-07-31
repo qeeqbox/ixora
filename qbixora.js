@@ -30,7 +30,7 @@ class QBIxora {
 
   add_node(name, search = undefined, _set = undefined) {
     try{
-      if (this.temp_nodes.length < 3000){
+      if (this.temp_nodes.length < 25000){
         if (typeof name !== 'undefined' && name !== null && !this.temp_nodes.includes(name)) {
           this.temp_nodes.push(name)
           var temp_node = {
@@ -107,9 +107,9 @@ class QBIxora {
       if (method == 'object'){
         return ixora_object
       }
-      else{
-        var template = fs.readFileSync('template_js.html', 'utf-8');
-        var rendered = ejs.render ( template , {ixora_object:ixora_object});
+      else if (method == 'file_with_json'){
+        var template = fs.readFileSync('graph.html', 'utf-8');
+        var rendered = ejs.render ( template , {project_name:this.project_name, method:'file_with_json', graph:ixora_object});
         if (typeof save_to !== 'undefined' && save_to !== null && rendered != ""){
             fs.writeFileSync(save_to, rendered, 'utf8');
             if (open_file){
