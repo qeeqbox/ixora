@@ -77,10 +77,10 @@ class QBIxora {
         this.verbose && console.log(err);
       }
   }
-  
-  create_graph(div, window_title="",search_title="",search_msg="", copyright_link="",copyright_msg="",tools=[], current_subject=undefined, collide=10,distance=100,data={},method="",save_to=undefined,open_file=false)
+  create_graph(div,window_title="",search_title="",search_msg="", copyright_link="",copyright_msg="",tools=[], collide=10,distance=100,data={},method="",save_to=undefined,open_file=false)
   {
-    var current_subject = current_subject;
+
+    var current_subject = false;
     var right_click_node = undefined
     var override_defualt_node_color = undefined
     var override_defualt_link_color = undefined

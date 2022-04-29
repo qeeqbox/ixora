@@ -55,8 +55,8 @@ class QBIxora:
             except:
                 pass
 
-    def create_graph(self, div, window_title='',search_title='',search_msg='', copyright_link='',copyright_msg='',tools=[], current_subject=None, collide=10,distance=100,data={},method='',save_to=None,open_file=False):
-        current_subject = current_subject;
+    def create_graph(self,div,window_title='',search_title='',search_msg='', copyright_link='',copyright_msg='',tools=[], collide=10,distance=100,data={},method='',save_to=None,open_file=False):
+        current_subject = False;
         right_click_node = None
         override_defualt_node_color = None
         override_defualt_link_color = None
@@ -90,4 +90,3 @@ class QBIxora:
                     wopen(save_to)
                 return True
         return False
-
