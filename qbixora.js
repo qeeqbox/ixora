@@ -138,6 +138,4 @@ class QBIxora {
   }
 }
 
-module.exports = {
-    QBIxora
-};
+module.exports = QBIxora
